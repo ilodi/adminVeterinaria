@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './bootstrap.min.css'
 import Header from './conponents/Header'
+import NuevaCita from './conponents/NuevaCita'
 
 class App extends Component{
   state ={
@@ -8,8 +9,13 @@ class App extends Component{
   }
   render(){
     return( 
-      <div class="container">
-        <header />
+      <div className="container">
+        <Header title='Administrador Pacientes Veterinaria' />
+        <div className="row">
+        <div className="col-md-10 mx-auto">
+          <NuevaCita/>
+        </div>
+        </div>
       </div>
     );
   }
