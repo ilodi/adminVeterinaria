@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+//Genera un nmero identificador cuando no usas una db
+import uuid from 'uuid';
 
 class NuevaCita extends Component {
   state = {
@@ -35,7 +37,11 @@ class NuevaCita extends Component {
         //Detemer la ejecición con un return 
         return
     }
+    //generar objeto con los datos haciendo unso de una copia
+    const nuevaCita ={...this.state.cita};
+    nuevaCita.id = uuid();
     //Agregar la cita al state de App
+    this.props.crearNuevaCita(nuevaCita);
   };
   render() {
     return (
