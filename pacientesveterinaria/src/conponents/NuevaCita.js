@@ -2,17 +2,19 @@ import React, { Component } from "react";
 //Genera un nmero identificador cuando no usas una db
 import uuid from 'uuid';
 
-class NuevaCita extends Component {
-  state = {
+//
+const stateInicial = {
     cita: {
-      mascota: "",
-      propietario: "",
-      fecha: "",
-      hora: "",
-      sintomas: ""
-    },
-    error: false
-  };
+        mascota: "",
+        propietario: "",
+        fecha: "",
+        hora: "",
+        sintomas: ""
+      },
+      error: false
+}
+class NuevaCita extends Component {
+  state = { ...stateInicial };
   //Cuando el usuario escribe en los input
   handleChange = e => {
     // console.log(`${e.target.name} : ${e.target.value}`);
@@ -42,6 +44,13 @@ class NuevaCita extends Component {
     nuevaCita.id = uuid();
     //Agregar la cita al state de App
     this.props.crearNuevaCita(nuevaCita);
+
+
+
+    /////Colocar en el state el State Inicial
+    this.setState({
+        ...stateInicial
+    })
   };
   render() {
       //Extraer el valor del state
