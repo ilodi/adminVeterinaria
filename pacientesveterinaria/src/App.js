@@ -8,7 +8,7 @@ class App extends Component{
     citas:[]
   }
   crearNuevaCita = datos =>{
-    //copiar el stat actual || Esto es como un push
+    //copiar el state actual || Esto es como un push
     const citas = [...this.state.citas, datos];
     //agregar el nuevo state
     this.setState({
