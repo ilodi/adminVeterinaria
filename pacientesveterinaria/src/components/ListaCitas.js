@@ -1,5 +1,6 @@
 import React from "react";
 import Cita from './Citas';
+import PropTypes from 'prop-types';
 
 const ListaCitas = ({ citas, elimanarCitas }) => {
  return(
@@ -21,4 +22,8 @@ const ListaCitas = ({ citas, elimanarCitas }) => {
  );
 };
 
+ListaCitas.prototype = {
+  citas : PropTypes.array.isRequired,
+  elimanarCitas : PropTypes.func.isRequired
+}
 export default ListaCitas;

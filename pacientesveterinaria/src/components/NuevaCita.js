@@ -1,6 +1,8 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+
 //Genera un nmero identificador cuando no usas una db
 import uuid from 'uuid';
+// import PropTypes from 'prop-types';
 
 //
 const stateInicial = {
@@ -151,5 +153,10 @@ class NuevaCita extends Component {
     );
   }
 }
+
+
+// NuevaCita.PropTypes = {
+//   crearNuevaCita : PropTypes.func.isRequired
+// }
 
 export default NuevaCita;

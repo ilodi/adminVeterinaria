@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Citas = ({cita, elimanarCitas}) => {
-    return(
+const Citas = ({ cita, elimanarCitas }) => {
+    return (
         <div className="media mt-3">
             <div className="media-body">
                 <h3 className="mt-0">
@@ -12,10 +13,15 @@ const Citas = ({cita, elimanarCitas}) => {
                 <p className="card-text"><span>Hora:</span> {cita.hora}</p>
                 <p className="card-text"><span>Sintomas:</span> {cita.sintomas}</p>
                 <p className="card-text"><span>Sintomas</span> {cita.sintomas}</p>
-                <button className="btn btn-danger" onClick={ () => elimanarCitas(cita.id)}> Borrar &times; </button>
+                <button className="btn btn-danger" onClick={() => elimanarCitas(cita.id)}> Borrar &times; </button>
             </div>
         </div>
     );
+}
+
+
+Citas.prototype = {
+    cita: PropTypes.object.isRequired
 }
 
 export default Citas;
