@@ -1,7 +1,7 @@
 import React from "react";
 import Cita from './Citas';
 
-const ListaCitas = ({ citas }) => {
+const ListaCitas = ({ citas, elimanarCitas }) => {
  return(
     <div className="card mt-2 py-5">
     <div className="card-body">
@@ -12,7 +12,8 @@ const ListaCitas = ({ citas }) => {
         { citas.map(cita => (
             <Cita 
             key={cita.id} 
-            cita={cita}/>
+            cita={cita}
+            elimanarCitas={elimanarCitas}/>
         )) }
       </div>
     </div>
